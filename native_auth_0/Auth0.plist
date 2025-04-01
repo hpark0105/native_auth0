@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ClientId</key>
+	<string>K1A5YZeUqnRwcWALDrK1Upx69rVkwBoy</string>
+	<key>Domain</key>
+	<string>hpark-sample-app.us.auth0.com</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>parkenstein.88.native-auth-0</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist> 
