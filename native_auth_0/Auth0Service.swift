@@ -38,7 +38,7 @@ class Auth0Service: ObservableObject {
             .signup(
                 email: email,
                 password: password,
-                connection: "Username-Password-Authentication",
+                connection: Config.Auth0.databaseConnection,
                 userMetadata: ["first_name": "", "last_name": ""]
             )
             .start { [weak self] result in
@@ -63,7 +63,7 @@ class Auth0Service: ObservableObject {
             .login(
                 usernameOrEmail: email,
                 password: password,
-                realmOrConnection: "Username-Password-Authentication"
+                realmOrConnection: Config.Auth0.databaseConnection
             )
             .start { [weak self] result in
                 switch result {
@@ -129,7 +129,7 @@ class Auth0Service: ObservableObject {
         print("🔐 Starting Apple login process...")
         Auth0
             .webAuth()
-            .connection("apple")
+            .connection(Config.Auth0.appleConnection)
             .start { [weak self] result in
                 switch result {
                 case .success(let credentials):
@@ -148,7 +148,7 @@ class Auth0Service: ObservableObject {
         print("🔐 Starting Google login process...")
         Auth0
             .webAuth()
-            .connection("google-oauth2")
+            .connection(Config.Auth0.googleConnection)
             .start { [weak self] result in
                 switch result {
                 case .success(let credentials):
@@ -167,7 +167,7 @@ class Auth0Service: ObservableObject {
         print("🔐 Starting email login process...")
         Auth0
             .webAuth()
-            .connection("email")
+            .connection(Config.Auth0.emailConnection)
             .start { [weak self] result in
                 switch result {
                 case .success(let credentials):
